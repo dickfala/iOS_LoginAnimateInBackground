@@ -16,6 +16,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        let backgroundImage = UIImageView()
+        backgroundImage.image = UIImage(named:"bg")
+        backgroundImage.frame = CGRect(x: 0, y: 0, width: (backgroundImage.image?.size.width)!, height: (window?.frame.height)!)
+        window?.addSubview(backgroundImage)
+        
+        
         return true
     }
 
