@@ -18,10 +18,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let backgroundImage = UIImageView()
+        backgroundImage.contentMode = .scaleAspectFill
         backgroundImage.image = UIImage(named:"bg")
         backgroundImage.frame = CGRect(x: 0, y: 0, width: (backgroundImage.image?.size.width)!, height: (window?.frame.height)!)
         window?.addSubview(backgroundImage)
         
+        UIView.animate(withDuration: 4, animations: {
+            
+            backgroundImage.center.x = backgroundImage.center.x - (backgroundImage.image?.size.width)! + (self.window?.frame.width)!
+            
+        }) { (finished) in
+            
+            UIView.animate(withDuration: 4, animations: {
+                backgroundImage.center.x = backgroundImage.center.x + (backgroundImage.image?.size.width)! - (self.window?.frame.width)!
+            })
+            
+            
+        }
         
         return true
     }
